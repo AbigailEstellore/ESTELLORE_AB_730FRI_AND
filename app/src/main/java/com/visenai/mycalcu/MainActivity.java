@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView display;
     private Double firstNumber = null;
     private String currentOperator = null;
-    private boolean isOperatorPressed = false;
+    private boolean hasDecimalPoint = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,71 +56,94 @@ public class MainActivity extends AppCompatActivity {
                 calculate();
                 break;
             case ".":
-                if (!display.getText().toString().contains(".")) {
+                if (!hasDecimalPoint) {
                     display.append(".");
+                    hasDecimalPoint = true;
                 }
                 break;
             case "+":
             case "-":
             case "*":
             case "/":
-                if (firstNumber == null) {
-                    firstNumber = Double.parseDouble(display.getText().toString());
-                    currentOperator = buttonText;
-                    display.setText("");
-                    isOperatorPressed = true;
-                } else {
+                if (firstNumber != null) {
                     calculate();
-                    currentOperator = buttonText;
-                    display.setText(String.valueOf(firstNumber));
                 }
+                // Remove any trailing decimal point before adding the operator
+                String displayText = display.getText().toString();
+                if (displayText.endsWith(".")) {
+                    displayText = displayText.substring(0, displayText.length() - 1);
+                }
+                display.setText(String.format("%s %s ", displayText, buttonText));
+                firstNumber = Double.parseDouble(displayText);
+                currentOperator = buttonText;
+                hasDecimalPoint = false;
                 break;
             default:
-                if (isOperatorPressed) {
-                    display.setText("");
-                    isOperatorPressed = false;
+                if (display.getText().toString().equals("0") || display.getText().toString().equals("Error")) {
+                    display.setText(buttonText);
+                } else {
+                    display.append(buttonText);
                 }
-                display.append(buttonText);
                 break;
         }
     }
+
 
     private void calculate() {
         if (firstNumber != null && currentOperator != null) {
-            double secondNumber = Double.parseDouble(display.getText().toString());
+            String text = display.getText().toString();
+            // Extract the parts of the expression
+            String[] parts = text.split(" ");
+            if (parts.length < 3) {
+                display.setText("Error");
+                return;
+            }
 
+            double secondNumber;
+            try {
+                secondNumber = Double.parseDouble(parts[2]);
+            } catch (NumberFormatException e) {
+                display.setText("Error");
+                return;
+            }
+
+            double result;
             switch (currentOperator) {
                 case "+":
-                    firstNumber += secondNumber;
+                    result = firstNumber + secondNumber;
                     break;
                 case "-":
-                    firstNumber -= secondNumber;
+                    result = firstNumber - secondNumber;
                     break;
                 case "*":
-                    firstNumber *= secondNumber;
+                    result = firstNumber * secondNumber;
                     break;
                 case "/":
                     if (secondNumber != 0) {
-                        firstNumber /= secondNumber;
+                        result = firstNumber / secondNumber;
                     } else {
                         display.setText("Error");
-                        firstNumber = null;
-                        currentOperator = null;
                         return;
                     }
                     break;
+                default:
+                    display.setText("Error");
+                    return;
             }
 
-            display.setText(String.valueOf(firstNumber));
-            firstNumber = null;
+            display.setText(String.format("%.2f", result));
+            firstNumber = result;
             currentOperator = null;
+            hasDecimalPoint = result % 1 != 0;
         }
     }
 
+
+
     private void clear() {
-        display.setText("");
+        display.setText("0");
         firstNumber = null;
         currentOperator = null;
-        isOperatorPressed = false;
+        hasDecimalPoint = false;
     }
 }
