@@ -13,10 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private TextView display;
-    private double firstNumber = Double.NaN;
-    private double secondNumber;
-    private String currentOperator;
-    private boolean hasDecimalPoint;
+    private Double firstNumber = null;
+    private String currentOperator = null;
+    private boolean isOperatorPressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,34 +56,38 @@ public class MainActivity extends AppCompatActivity {
                 calculate();
                 break;
             case ".":
-                if (!hasDecimalPoint) {
+                if (!display.getText().toString().contains(".")) {
                     display.append(".");
-                    hasDecimalPoint = true;
                 }
                 break;
             case "+":
             case "-":
             case "*":
             case "/":
-                if (!Double.isNaN(firstNumber)) {
+                if (firstNumber == null) {
+                    firstNumber = Double.parseDouble(display.getText().toString());
+                    currentOperator = buttonText;
+                    display.setText("");
+                    isOperatorPressed = true;
+                } else {
                     calculate();
+                    currentOperator = buttonText;
+                    display.setText(String.valueOf(firstNumber));
                 }
-                firstNumber = Double.parseDouble(display.getText().toString());
-                currentOperator = buttonText;
-                display.setText("");
-                hasDecimalPoint = false;
                 break;
             default:
-                if (display.getText().length() < 2 || (display.getText().length() < 3 && hasDecimalPoint)) {
-                    display.append(buttonText);
+                if (isOperatorPressed) {
+                    display.setText("");
+                    isOperatorPressed = false;
                 }
+                display.append(buttonText);
                 break;
         }
     }
 
     private void calculate() {
-        if (!Double.isNaN(firstNumber)) {
-            secondNumber = Double.parseDouble(display.getText().toString());
+        if (firstNumber != null && currentOperator != null) {
+            double secondNumber = Double.parseDouble(display.getText().toString());
 
             switch (currentOperator) {
                 case "+":
@@ -101,22 +104,23 @@ public class MainActivity extends AppCompatActivity {
                         firstNumber /= secondNumber;
                     } else {
                         display.setText("Error");
+                        firstNumber = null;
+                        currentOperator = null;
                         return;
                     }
                     break;
             }
 
             display.setText(String.valueOf(firstNumber));
-            firstNumber = Double.NaN;
-            hasDecimalPoint = false;
+            firstNumber = null;
+            currentOperator = null;
         }
     }
 
     private void clear() {
         display.setText("");
-        firstNumber = Double.NaN;
-        secondNumber = 0;
+        firstNumber = null;
         currentOperator = null;
-        hasDecimalPoint = false;
+        isOperatorPressed = false;
     }
 }
