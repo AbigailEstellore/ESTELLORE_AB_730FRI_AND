@@ -1,4 +1,4 @@
-package com.calcuabby.myappcalcu;
+package com.visenai.mycalcu;
 
 import android.os.Bundle;
 import android.view.View;
