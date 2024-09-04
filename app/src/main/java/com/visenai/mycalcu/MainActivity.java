@@ -65,18 +65,28 @@ public class MainActivity extends AppCompatActivity {
             case "-":
             case "*":
             case "/":
-                if (firstNumber != null) {
-                    calculate();
-                }
-                // Remove any trailing decimal point before adding the operator
                 String displayText = display.getText().toString();
-                if (displayText.endsWith(".")) {
-                    displayText = displayText.substring(0, displayText.length() - 1);
+                if (displayText.isEmpty() || displayText.endsWith(" ")) {
+                    // Do nothing if the display is empty or ends with a space
+                    return;
                 }
-                display.setText(String.format("%s %s ", displayText, buttonText));
-                firstNumber = Double.parseDouble(displayText);
-                currentOperator = buttonText;
-                hasDecimalPoint = false;
+
+                // Check if the last character is an operator, replace it
+                if (displayText.endsWith("+") || displayText.endsWith("-") || displayText.endsWith("*") || displayText.endsWith("/")) {
+                    display.setText(displayText.substring(0, displayText.length() - 1) + buttonText);
+                } else if (firstNumber != null && currentOperator == null) {
+                    // If we already have two numbers and an operator, don't add more operators
+                    display.setText(displayText + " " + buttonText + " ");
+                    firstNumber = Double.parseDouble(displayText.split(" ")[0]);
+                    currentOperator = buttonText;
+                    hasDecimalPoint = false;
+                } else if (firstNumber == null) {
+                    // Set the first number and operator
+                    display.setText(displayText + " " + buttonText + " ");
+                    firstNumber = Double.parseDouble(displayText);
+                    currentOperator = buttonText;
+                    hasDecimalPoint = false;
+                }
                 break;
             default:
                 if (display.getText().toString().equals("0") || display.getText().toString().equals("Error")) {
@@ -88,11 +98,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void calculate() {
         if (firstNumber != null && currentOperator != null) {
             String text = display.getText().toString();
-            // Extract the parts of the expression
             String[] parts = text.split(" ");
             if (parts.length < 3) {
                 display.setText("Error");
@@ -138,14 +146,11 @@ public class MainActivity extends AppCompatActivity {
                 display.setText(String.format("%.2f", result));
             }
 
-            firstNumber = result;
+            firstNumber = null;
             currentOperator = null;
             hasDecimalPoint = result % 1 != 0;
         }
     }
-
-
-
 
     private void clear() {
         display.setText("0");
