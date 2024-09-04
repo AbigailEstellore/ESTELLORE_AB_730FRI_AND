@@ -131,12 +131,19 @@ public class MainActivity extends AppCompatActivity {
                     return;
             }
 
-            display.setText(String.format("%.2f", result));
+            // Format result based on whether it is a whole number or decimal
+            if (result % 1 == 0) {
+                display.setText(String.format("%d", (int) result));
+            } else {
+                display.setText(String.format("%.2f", result));
+            }
+
             firstNumber = result;
             currentOperator = null;
             hasDecimalPoint = result % 1 != 0;
         }
     }
+
 
 
 
