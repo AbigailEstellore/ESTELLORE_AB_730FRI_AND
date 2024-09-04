@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         String buttonText = button.getText().toString();
 
         switch (buttonText) {
-            case "C":
+            case "AC":
                 clear();
                 break;
             case "=":
