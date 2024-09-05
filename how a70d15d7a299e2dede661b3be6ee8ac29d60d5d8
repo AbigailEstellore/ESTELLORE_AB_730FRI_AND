@@ -1,0 +1,84 @@
+[33mcommit 1cb6f3d1ff91b3aa47724dbab6cec177d9c1a5b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: a70d15d dc98425
+Author: Abigail Estellore <estelloreabigail91@example.com>
+Date:   Fri Sep 6 03:49:53 2024 +0800
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit a70d15d7a299e2dede661b3be6ee8ac29d60d5d8[m
+Author: Abigail Estellore <estelloreabigail91@example.com>
+Date:   Thu Sep 5 05:57:53 2024 +0800
+
+    Initial commit
+
+[33mcommit dc98425fc97138ffbfa51f8bd805c92967c5ca7d[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 05:56:01 2024 +0800
+
+    Update activity_main.xml
+    
+    nanay layout tanan
+
+[33mcommit 920fc060027dc857304bbee1fea08ac55e0cd128[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 05:40:48 2024 +0800
+
+    Update activity_main.xml
+
+[33mcommit 9a4f8021506f50a3aae5e35b8fae7cc230fbb3c1[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 05:40:28 2024 +0800
+
+    Update MainActivity.java
+
+[33mcommit 14d9985154d4098dab7971ef4e4976ba6cb394e1[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 04:52:17 2024 +0800
+
+    Update MainActivity.java
+    
+    okaynaaa
+
+[33mcommit 754fa2712ad0c2d3eb083e75f491a0f3488faa2e[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 04:45:23 2024 +0800
+
+    Update MainActivity.java
+    
+    oki na
+
+[33mcommit 7cabe33b6af8d0f7554eb9ab18c5c1398ddfbae9[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 04:40:32 2024 +0800
+
+    Update MainActivity.java
+
+[33mcommit 370e2259a64dbf1f90556bc36c0b034c9d9899c9[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 04:09:26 2024 +0800
+
+    Update MainActivity.java
+
+[33mcommit 58c27a8e83397ee5d69a6e3612171f9c8631e79f[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 03:42:10 2024 +0800
+
+    Update MainActivity.java
+
+[33mcommit 773fdd0baf902e22e82919cd3111522e28232363[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 03:39:50 2024 +0800
+
+    Update MainActivity.java
+
+[33mcommit ceb3a329347ad2dc3294c527f9f6a6a6ae256bb4[m
+Author: Abigail Dave R. Estellore <160022964+AbigailEstellore@users.noreply.github.com>
+Date:   Thu Sep 5 03:39:09 2024 +0800
+
+    Update activity_main.xml
+
+[33mcommit 636a2f86d41d5189b963a8eefa8a9dcd2484d787[m
+Author: Abigail Estellore <estelloreabigail91@example.com>
+Date:   Wed Sep 4 18:50:24 2024 +0800
+
+    first commit
