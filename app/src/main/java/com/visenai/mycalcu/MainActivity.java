@@ -65,95 +65,74 @@ public class MainActivity extends AppCompatActivity {
             case "-":
             case "*":
             case "/":
-                String displayText = display.getText().toString();
-                if (displayText.isEmpty() || displayText.endsWith(" ")) {
-                    // Do nothing if the display is empty or ends with a space
-                    return;
-                }
-
-                // Check if the last character is an operator, replace it
-                if (displayText.endsWith("+") || displayText.endsWith("-") || displayText.endsWith("*") || displayText.endsWith("/")) {
-                    display.setText(displayText.substring(0, displayText.length() - 1) + buttonText);
-                } else if (firstNumber != null && currentOperator == null) {
-                    // If we already have two numbers and an operator, don't add more operators
-                    display.setText(displayText + " " + buttonText + " ");
-                    firstNumber = Double.parseDouble(displayText.split(" ")[0]);
-                    currentOperator = buttonText;
-                    hasDecimalPoint = false;
-                } else if (firstNumber == null) {
-                    // Set the first number and operator
-                    display.setText(displayText + " " + buttonText + " ");
-                    firstNumber = Double.parseDouble(displayText);
-                    currentOperator = buttonText;
-                    hasDecimalPoint = false;
-                }
+                handleOperator(buttonText);
                 break;
             default:
-                if (display.getText().toString().equals("0") || display.getText().toString().equals("Error")) {
-                    display.setText(buttonText);
-                } else {
-                    display.append(buttonText);
-                }
-                break;
+                display.append(buttonText);
         }
+    }
+
+    private void handleOperator(String operator) {
+        String displayText = display.getText().toString();
+
+        if (firstNumber == null) {
+            firstNumber = Double.parseDouble(displayText);
+            currentOperator = operator;
+            display.append(" " + operator + " ");
+        } else {
+            calculate();
+            currentOperator = operator;
+            display.append(" " + operator + " ");
+        }
+
+        hasDecimalPoint = false;  // Reset decimal point for the next number
     }
 
     private void calculate() {
-        if (firstNumber != null && currentOperator != null) {
-            String text = display.getText().toString();
-            String[] parts = text.split(" ");
-            if (parts.length < 3) {
-                display.setText("Error");
+        String[] tokens = display.getText().toString().split(" ");
+        if (tokens.length < 3) return;
+
+        double secondNumber = Double.parseDouble(tokens[2]);
+
+        double result;
+        switch (currentOperator) {
+            case "+":
+                result = firstNumber + secondNumber;
+                break;
+            case "-":
+                result = firstNumber - secondNumber;
+                break;
+            case "*":
+                result = firstNumber * secondNumber;
+                break;
+            case "/":
+                result = firstNumber / secondNumber;
+                break;
+            default:
                 return;
-            }
-
-            double secondNumber;
-            try {
-                secondNumber = Double.parseDouble(parts[2]);
-            } catch (NumberFormatException e) {
-                display.setText("Error");
-                return;
-            }
-
-            double result;
-            switch (currentOperator) {
-                case "+":
-                    result = firstNumber + secondNumber;
-                    break;
-                case "-":
-                    result = firstNumber - secondNumber;
-                    break;
-                case "*":
-                    result = firstNumber * secondNumber;
-                    break;
-                case "/":
-                    if (secondNumber != 0) {
-                        result = firstNumber / secondNumber;
-                    } else {
-                        display.setText("Error");
-                        return;
-                    }
-                    break;
-                default:
-                    display.setText("Error");
-                    return;
-            }
-
-            // Format result based on whether it is a whole number or decimal
-            if (result % 1 == 0) {
-                display.setText(String.format("%d", (int) result));
-            } else {
-                display.setText(String.format("%.2f", result));
-            }
-
-            firstNumber = null;
-            currentOperator = null;
-            hasDecimalPoint = result % 1 != 0;
         }
+
+        // Check if either number is a decimal and format accordingly
+        String firstNumStr = tokens[0];  // The first number as a string
+        boolean isFirstDecimal = firstNumStr.contains(".");
+        boolean isSecondDecimal = tokens[2].contains(".");
+
+        // Format result to two decimal places if either number is a decimal
+        if (isFirstDecimal || isSecondDecimal) {
+            display.setText(String.format("%.2f", result));
+        } else {
+            // Otherwise, display as an integer
+            display.setText(String.format("%.0f", result));
+        }
+
+        // Reset for the next calculation
+        firstNumber = null;
+        currentOperator = null;
+        hasDecimalPoint = false;
     }
 
     private void clear() {
-        display.setText("0");
+        display.setText("");
         firstNumber = null;
         currentOperator = null;
         hasDecimalPoint = false;
