@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/searchmenu"
+        android:icon="@drawable/img_1"
+        android:title="menu_search"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/fldr_menu"
+        android:icon="@drawable/img_2"
+        android:title="menu_folder"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/sub_exit"
+        android:title="Exit"
+        app:showAsAction="never"/>
+
+</menu>
