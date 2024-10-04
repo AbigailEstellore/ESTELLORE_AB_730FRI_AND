@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Username EditText -->
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name" />
+
+        <!-- Course EditText -->
+        <EditText
+            android:id="@+id/editTextCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course" />
+
+        <!-- Contact Number EditText -->
+        <EditText
+            android:id="@+id/editTextContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact Number" />
+
+        <!-- Age EditText -->
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Age" />
+
+        <!-- Email EditText -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
+
+        <!-- Gender RadioGroup -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+
+        <!-- Talent Checkboxes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C++" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDancingcsharp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C#" />
+
+        <CheckBox
+            android:id="@+id/checkBoxjava"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java" />
+
+        <CheckBox
+            android:id="@+id/checkBoxpython"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Python" />
+
+        <!-- Save/Cancel Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Save"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Cancel" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
