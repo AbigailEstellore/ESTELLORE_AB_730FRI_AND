@@ -226,7 +226,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Talent:"
+                    android:text="language:"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="#BF65A1"
@@ -238,7 +238,7 @@
                     android:id="@+id/tv_talent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Talent"
+                    android:text="Language"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="#BF65A1"
