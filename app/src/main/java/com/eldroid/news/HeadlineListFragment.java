@@ -59,10 +59,8 @@ public class HeadlineListFragment extends Fragment {
                             "\n" +
                             "Still a no-show",
                     R.drawable.img));
-            headlines.add(new Headline("Preacher wanted by FBI on sex crime charges evades Philippine police as followers resist in dayslong standoff",
+            headlines.add(new Headline("Preacher wanted by FBI on sex crime charges evades Philippine police",
                     "A violent standoff between Philippine police and followers of a fugitive preacher wanted by both the FBI and local law enforcement on sexual abuse and human trafficking charges entered a fourth day on Tuesday as nearly 2,000 officers surrounded a sprawling church compound.\n" +
-                            "\n" +
-                            "Pastor Apollo Carreon Quiboloy, a self-styled “appointed son of God” and founder of the Kingdom of Jesus Christ church, has been on the run for at least three years.\n" +
                             "\n" +
                             "A 2021 US indictment accuses the 74-year-old preacher and his alleged accomplices of running a sex trafficking ring that coerced girls and young women to have sex with him under threats of “eternal damnation.”\n" +
                             "\n" +
@@ -74,9 +72,61 @@ public class HeadlineListFragment extends Fragment {
                             "\n" +
                             "Police fired tear gas late Sunday as they tried to disperse the crowd. At least six officers have been injured and at least 18 people arrested during the dayslong standoff, police said.",
                     R.drawable.img_1));
-            headlines.add(new Headline("UTOT NI ABBY",
-                    "This is the news content for headline 3.",
-                    R.drawable.img_1));
+            headlines.add(new Headline("Filipinos laud Indonesia for arresting fugitive mayor Alice Guo",
+                    "THE Catholic-majority Philippines lauded the Indonesian government for arresting fugitive Bamban town Mayor Alice Gou, who is accused of her alleged links to illegal Chinese gambling operations, money laundering, and human trafficking.\n" +
+                            "\n" +
+                            "“This development underscores the principle that justice must prevail, and that accountability knows no borders. We commend the authorities for their continued pursuit of the truth and the rule of law,” Jing Rey Henderson, head of communications and partnership development of Caritas Philippines, told Sunstar Philippines on Thursday, September 4, 2024.\n" +
+                            "\n" +
+                            "“As we have stated before, no one is above the law. Public servants must be held to the highest standards of integrity, and those who violate the public's trust must face the consequences of their actions,” added Henderson, as the humanitarian arm of the Catholic Bishops’ Conference of the Philippines also prayed for the immediate arrest of the fugitive 35-year-old mayor..",
+                    R.drawable.img_2));
+
+
+            headlines.add(new Headline("Rodrigo Duterte to run for mayor in southern Philippines stronghold",
+                    "THE Catholic-majority Philippines lauded the Indonesian government for arresting fugitive Bamban town Mayor Alice Gou, who is accused of her alleged links to illegal Chinese gambling operations, money laundering, and human trafficking.\n" +
+                            "\n" +
+                            "“This development underscores the principle that justice must prevail, and that accountability knows no borders. We commend the authorities for their continued pursuit of the truth and the rule of law,” Jing Rey Henderson, head of communications and partnership development of Caritas Philippines, told Sunstar Philippines on Thursday, September 4, 2024.\n" +
+                            "\n" +
+                            "“As we have stated before, no one is above the law. Public servants must be held to the highest standards of integrity, and those who violate the public's trust must face the consequences of their actions,” added Henderson, as the humanitarian arm of the Catholic Bishops’ Conference of the Philippines also prayed for the immediate arrest of the fugitive 35-year-old mayor..",
+                    R.drawable.img_3));
+
+            headlines.add(new Headline("Compensation arrives 7 years after siege that left Marawi a ‘dead city’",
+                    "Now, Marawi residents are finally beginning to receive payouts, in a compensation process that also must navigate a frayed and fragile trust.\n" +
+                            "\n" +
+                            "“We want the people to be on board with us,” Dandamun-Latiph told Al Jazeera. “The people deserve nothing less than very good service after what has happened.”\n" +
+                            "\n" +
+                            "Marawi was completely destroyed after the Maute and Abu Sayyaf groups launched an attack in 2017, holding on to the city during a five-month siege before the Philippine military recaptured it.",
+                    R.drawable.img_5));
+
+
+            headlines.add(new Headline("Philippines challenges China over South China Sea at ASEAN meet",
+                    "Marcos raised the issue in the meeting with Li, arguing that \"you cannot separate economic cooperation from political security,\" a Southeast Asian diplomat who attended the meeting told reporters.\n" +
+                            "\n" +
+                            "The Li summit was largely focused on trade, and came the same day the premier met with Australian Prime Minister Anthony Albanese who said Beijing has agreed to lift sanctions on the lucrative lobster industry.\n" +
+                            "\n" +
+                            "But Marcos told the meeting that ASEAN and China cannot pretend that all is well on the economic front when there are tensions on the political front, the Southeast Asian diplomat said.\n" +
+                            "\n" +
+                            "Marcos also said that both sides should hasten talks on a code of conduct in the sea.\n" +
+                            "\n" +
+                            "“There should be more urgency in the pace of the negotiations of the ASEAN-China Code of Conduct (COC),” he said.\n" +
+                            "\n" +
+                            "“The definition of a concept as basic as 'self-restraint' does not yet enjoy consensus,” he said.\n" +
+                            "\n" +
+                            "ASEAN earlier said that it aims to finalize a code of conduct in the South China Sea by 2026, a document which would determine how claimant countries could peacefully resolve disputes in the strategic waterway.\n" +
+                            "\n" +
+                            "But arguments on whether the COC should be legally binding or not and whether non-claimant countries need to seek permission before conducting activities in the South China Sea have dragged the finalization of the document for decades.\n" +
+                            "\n" +
+                            "China to 'crush' foreign encroachment in South China Sea\n" +
+                            "\n" +
+                            "On Wednesday, ASEAN leaders repeated longstanding calls for restraint and respect for international law in the South China Sea, according to a draft summit chairman's statement seen by AFP.\n" +
+                            "\n" +
+                            "The growing frequency and intensity of clashes in the disputed waterway are fueling fears that the situation could escalate.\n" +
+                            "\n" +
+                            "\"The South China Sea is a live and immediate issue, with real risks of an accident spiraling into conflict,\" Singapore's Prime Minister Lawrence Wong told his fellow leaders in Wednesday's summit.\n" +
+                            "\n" +
+                            "Beijing claims almost the entirety of the South China Sea, a waterway of immense strategic importance through which trillions of dollars in trade transits every year.\n" +
+                            "\n" +
+                            "But several ASEAN members -- the Philippines, Malaysia, Vietnam, Indonesia and Brunei -- also have competing claims to various small islands and reefs.",
+                    R.drawable.img_6));
         }
 
         // Initialize the adapter and set it to the RecyclerView
